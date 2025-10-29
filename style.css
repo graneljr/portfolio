@@ -1,0 +1,1055 @@
+*{
+        font-family: "Montserrat", sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        scroll-behavior: smooth;
+        padding: 0;
+}
+
+header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%; 
+        max-width: 100vw; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        z-index: 100;
+        color: white;
+       
+    }
+    
+.navlinks{
+        display: flex;
+        gap: 17px;
+        width: 20%;
+        gap: 25px;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;  
+}
+.links{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        transition: all 0.3s ease-in-out;
+        font-weight: 500;
+        position: relative;
+}
+
+nav .links span{
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background-color: white;
+        bottom: -5px;
+        left: 0;
+        transition: all .75 ease-in-out;
+}
+
+.links:hover{
+        color: aqua;
+        transform: scale(1.1);
+}
+
+#home-nav span{
+        animation: active-home;
+        animation-timeline: scroll(y);
+}
+@keyframes active-home{
+        0%{
+        
+                width: 100%;
+                background-color: aqua;
+                
+        }
+        52%{
+                width: 0%;
+                
+        }
+}
+
+#about-nav span{
+        animation: active-about;
+        animation-timeline: scroll(y);
+}
+
+
+#contact-nav span{
+        animation: active-contact;
+        animation-timeline: scroll(y);
+}
+
+@keyframes active-about{
+        42%{
+                width: 100%;
+                background-color: aqua;
+                
+        }
+        11%{
+                width: 0%;
+        }
+
+        65.5%{
+                width: 100%;
+                
+        }
+}
+
+@keyframes active-contact{
+         90%{
+                width: 100%;
+                background-color: aqua;
+                
+        }
+        50%{
+                width: 0%;
+        }
+        100%{
+                width: 100%;
+                
+        }
+}
+#open{
+        display: none;
+    
+}
+.open-menu{
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+        z-index: 100;
+
+}
+.open-menu span, .close-menu span {
+        width: 20px;
+        height: 3px;
+        background-color: white;
+}
+
+
+#home{
+        width: 100%;    
+        height: 100vh;
+        background-color: rgb(14, 6, 51);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+}
+
+.image-background{
+        position: relative;
+        width: 500px;
+        background-color: aqua;
+        height: 500px;
+        border-radius: 50%;
+        box-shadow: 
+        0 0 30px 10px rgba(0, 255, 255, 0.8), /* Outer glow */
+        0 0 60px 20px rgba(0, 255, 255, 0.5), /* Mid glow */
+        0 0 90px 40px rgba(0, 255, 255, 0.3); /* Faint outer glow */
+        animation: image-slide-fade-in 1.5s ease forwards 1s;
+        opacity: 0;
+}
+
+.me{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 540px;
+        border-radius: 49%;
+}
+@keyframes image-slide-fade-in{
+        0%{
+                opacity: 0;
+                transform: translateX(100%);
+
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+.logo{
+        animation:  logo-slide-fade-in 0.75s ease forwards;
+}
+@keyframes logo-slide-fade-in{
+        0%{
+                opacity: 0;
+                transform: translateX(-200px);
+
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+#home-nav{
+        opacity: 0;
+        animation:home-links-slide-down-in .5s ease-in-out forwards .10s;
+}
+@keyframes home-links-slide-down-fade-in {
+        0%{
+                opacity: 0;
+                transform: translateY(-200px);
+
+        }100%{
+                opacity: 1;
+                transform: translateY(0%);
+        }
+        
+}
+#about-nav{
+        opacity: 0;
+        animation:about-links-slide-down-in .5s ease-in-out forwards .15s;
+}
+@keyframes about-links-slide-down-in {
+        0%{
+                opacity: 0;
+                transform: translateY(-300px);
+
+        }100%{
+                opacity: 1;
+                transform: translateY(0%);
+        }
+        
+}
+
+#contact-nav{
+        opacity: 0;
+        animation:home-links-slide-down-in .5s ease-in-out forwards .5s;
+}
+@keyframes home-links-slide-down-in {
+        0%{
+                opacity: 0;
+                transform: translateY(-100px);
+        }100%{
+                opacity: 1;
+                transform: translateY(0%);
+        }
+        
+}
+.home-content{
+        color: white;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        height: 50vh;
+}
+.greetings{
+        opacity: 0;
+        animation: greetings-slide-in 0.75s ease forwards 1.5s;
+}
+@keyframes greetings-slide-in{
+        0%{
+                opacity: 0;
+                transform: translateX(-200px);
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+.name{
+        opacity: 0;
+        animation: name-slide-in 0.75s ease forwards 1.7s;
+}
+@keyframes name-slide-in{
+        0%{
+                opacity: 0;
+                transform: translateX(-200px);
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+.student{
+        opacity: 0;
+        animation: name-slide-in 0.75s ease forwards 1.9s;
+}
+@keyframes name-slide-in{
+        0%{
+                opacity: 0;
+                transform: translateX(-200px);
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+.tag-line{
+        opacity: 0;
+        animation: name-slide-in 0.75s ease forwards 2s;
+}
+@keyframes name-slide-in{
+        0%{
+                opacity: 0;
+                transform: translateX(-200px);
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+.linkedin{
+        opacity: 0;
+        animation:linkedin-slide-in 0.75s ease forwards 2.2s;
+}
+@keyframes linkedin-slide-in{
+        0%{
+                opacity: 0;
+                transform: translateX(-500px);
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+.instagram{
+        opacity: 0;
+        animation:instagram-slide-in 0.75s ease forwards 2.4s;
+}
+@keyframes instagram-slide-in{
+        0%{
+                opacity: 0;
+                transform: translateX(-500px);
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+.github{
+        opacity: 0;
+        animation:github-slide-in 0.75s ease forwards 2.6s;
+}
+@keyframes  github-slide-in{
+        0%{
+                opacity: 0;
+                transform: translateX(-500px);
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+.facebook{
+        opacity: 0;
+        animation:facebook-slide-in 0.75s ease forwards 2.8s;
+}
+@keyframes facebook-slide-in{
+        0%{
+                opacity: 0;
+                transform: translateX(-500px);
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+.download-btn{
+        opacity: 0;
+        animation:download-slide-in 0.75s ease forwards 3.2s;
+}
+@keyframes download-slide-in{
+        0%{
+                opacity: 0;
+                transform: translateX(-200px);
+        }100%{
+                opacity: 1;
+                transform: translateX(0%);
+        }
+}
+.home-content h3 ,h2{
+        font-size: 2rem;
+}
+.home-content h1{
+        font-size: 3rem;
+}
+.home-content .tag-line{
+        font-size: 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+}
+.home-content .school{
+        color: aqua;
+
+}
+.socialmedia-icons{
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+}
+.socialmedia-icons .icons{
+        color: aqua;
+        scale: 2;
+        border: 2px solid aqua;
+        border-radius: 50%;
+        padding: 7px;
+        transition: all .5s ease-in-out;
+        cursor: pointer;
+}
+
+.icons:hover{
+        box-shadow: 0 0 10px aqua;
+        background-color: aqua;
+        color: rgb(14, 6, 51);
+
+
+}
+
+.download-btn{
+        width: 200px;
+        font-size: 1.5rem;
+        padding: 20px 15px;
+        border: none;
+        background-color: aqua;
+        color: rgb(14, 6, 51);
+        border-radius: 10px;
+        font-weight: 600;
+        transition:  all .5s ease-in-out;
+        cursor: pointer;
+}
+.download-btn:hover{
+        box-shadow: 0 0 20px aqua;
+
+        color: rgb(14, 6, 51);
+        
+}
+#about{
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(14, 6, 51);
+        display: flex;
+        flex-direction: column;
+        gap: 150px;
+        align-items: center;
+}
+.about-header{
+        padding-top: 100px;
+        color: white;
+        font-size: 40px;
+}
+.about-content{
+        width: 60%;
+        height: 600px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        place-items: center;
+        grid-template-rows: repeat(2, auto);  
+
+}
+.about-my-self{
+        width: 388px;
+        height:250px;
+        color: white;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        transition: all .5s ease-in-out;
+}
+.about-my-self span{
+        padding: 15px;
+        display: flex;
+        gap: 20px;
+        width: auto;
+   
+}
+.about-my-self span i{
+        font-size: 30px;
+        
+}
+.about-my-self:hover{
+        scale: 1.1;
+}
+#contact{
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(14, 6, 51);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 200px;
+        
+}
+#contact h1{
+     color: white;
+     padding-top: 100px;
+        
+}
+
+form{
+
+        width: 40%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        
+}
+   .User-info {
+        position: relative;
+        width: 575px;
+    }
+
+    .User-info input {
+        width: 100%;
+        height: 50px;
+        padding: 10px 10px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        border: 1px solid white;
+        border-radius: 3px;
+        background-color: transparent;
+        outline: none;
+        transition: all 0.3s ease-in-out;
+        color: white;
+    }
+
+    .User-info label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+        color: white;
+        background-color:  rgb(14, 6, 51);
+        padding: 5px 5px;
+    }
+
+    .User-info input:focus {
+        border: 1px solid aqua;
+        outline: 2px solid aqua;
+    }
+
+  
+.User-info input:focus ~ label,
+.User-info input:valid ~ label{
+    top: 1px;
+    z-index: 100;
+    padding: 0 10px;
+    font-size: 13px;
+}
+.message{
+        outline: none;
+        font-size: 15px;
+        resize: none;
+        background-color: transparent;
+        padding: 10px;
+        color: white;
+        border: 1px solid white;
+        border-radius: 3px;
+}
+
+.send-btn{
+        width: 250px;
+        font-size: 1.5rem;
+        padding: 20px 15px;
+        border: none;
+        background-color: aqua;
+        color: rgb(14, 6, 51);
+        border-radius: 10px;
+        font-weight: 600;
+        transition:  all .5s ease-in-out;
+        cursor: pointer;
+        letter-spacing: 1;
+}
+.send-btn:hover{
+        box-shadow: 0 0 20px aqua;
+
+        color: rgb(14, 6, 51);
+        
+}
+@media (max-width: 550px) {
+        
+        #home{
+                flex-direction: column-reverse;
+        }
+        
+        .home-content{
+                width: 100%;
+                align-items: center;
+                height: 50vh;
+                gap: 20px;
+        }
+        .greetings{
+                font-size: 1.5rem;
+        }
+        .home-content .name{
+                font-size: 1.4rem;
+        }
+        .student{
+                font-size: 1.4rem;
+        }
+        .tag-line{
+                font-size: .5rem;
+                flex-wrap: wrap;
+                width: 50%;
+        }
+        .image-background{
+                padding-top: 100px;
+                width: 220px;
+                
+                height: 195px;
+        }
+        .me{
+                width: 250px;
+                height: 250px;  
+        }
+        
+        .open-menu{
+                display: flex;
+        }
+        .socialmedia-icons{
+                font-size: .5rem;
+        }
+        .socialmedia-icons .icons{
+                border: 1px solid aqua;
+                padding: 5px;
+        }
+        .download-btn{
+                width: 150px;
+                font-size: 1rem;
+                padding: 10px 5px;
+        }
+        .navbar{
+                position: absolute;
+                top: 0;
+                right: -58%;
+                z-index: 1000;                
+                width: 200px;
+                height: 100vh;
+               background-color: rgb(4, 2, 31);
+               transition: all 1s ease-in-out;
+        }
+     
+        .navlinks{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+                padding-top: 50px;
+                width: 100%;
+                height: 30vh;
+        }
+        .close-menu {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                gap: 4px;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+            }
+
+        #open:checked ~ .open-menu{
+                display: block;
+        }
+
+        #open:checked ~ .navbar{
+                right: 0%;
+        }
+        .navlinks .close-menu{
+                display: flex;
+        }        
+        .about-content{
+                width: 70%;
+                height: 700px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); 
+                grid-template-rows: repeat(3, auto);  
+        
+        }
+        
+        .about-my-self{
+                width: 170px; 
+                
+                height:200px;
+                color: white;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+                transition: all .5s ease-in-out;
+        }
+        .about-my-self span{
+                padding: 15px;
+                display: flex;
+                gap: 30px;
+                width: auto;
+           
+        }
+        .about-my-self span i{
+                font-size: 20px;
+                
+        }
+        .about-my-self span h2{
+                font-size: 15px;
+                
+        }
+        .User-info {
+                position: relative;
+                width: 300px;
+            }
+            .message{
+                width: 300px;
+                height: 100px;
+                color: white;
+        }
+        .send-btn{
+                width: 180px;
+                font-size: 1.2rem;
+                padding: 20px 15px;
+        }
+        
+}
+@media (min-width: 550px) and (max-width: 900px) {
+        #home{
+                flex-direction: column-reverse;
+        }
+        
+        .home-content{
+                width: 100%;
+                align-items: center;
+                height: 50vh;
+                gap: 20px;
+        }
+        .greetings{
+                font-size: 1.5rem;
+        }
+        .home-content .name{
+                font-size: 1.4rem;
+        }
+        .student{
+                font-size: 1.4rem;
+        }
+        .tag-line{
+                font-size: .5rem;
+                flex-wrap: wrap;
+                width: 50%;
+        }
+        .image-background{
+                padding-top: 100px;
+                width: 220px;
+                
+                height: 195px;
+        }
+        .me{
+                width: 250px;
+                height: 250px;  
+        }
+        .socialmedia-icons{
+                font-size: .7rem;
+        }
+        .socialmedia-icons .icons{
+                border: 1px solid aqua;
+                padding: 5px;
+        }
+        .download-btn{
+                width: 200px;
+                font-size: 1.3rem;
+                padding: 15px 8px;
+        }
+        #about{
+                gap:100px;
+        }
+        .about-content{
+                width: 60%;
+                height: 700px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); 
+                grid-template-rows: repeat(3, auto);
+                gap: 20px 0px;
+        }
+        .about-my-self{
+                width:77%; 
+                height:200px;
+                color: white;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+                transition: all .5s ease-in-out;
+        }
+        .about-my-self span{
+                padding: 15px;
+                display: flex;
+                gap: 30px;
+                width: auto;
+           
+        }
+        .about-my-self span i{
+                font-size: 20px;
+                
+        }
+        .about-my-self span h2{
+                font-size: 15px;
+                
+        }
+        .User-info {
+                position: relative;
+                width: 400px;
+            }
+            .message{
+                width: 400px;
+                height: 100px;
+        }
+        .send-btn{
+                width: 180px;
+                font-size: 1.2rem;
+                padding: 20px 15px;
+        }
+        .about-my-self{
+                width: 170px; 
+
+                height:200px;
+                color: white;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+                transition: all .5s ease-in-out;
+        }
+        .about-my-self span{
+                padding: 15px;
+                display: flex;
+                gap: 30px;
+                width: auto;
+           
+        }
+        .about-my-self span i{
+                font-size: 20px;
+                
+        }
+        .about-my-self span h2{
+                font-size: 15px;
+                
+        }
+        .User-info {
+                position: relative;
+                width: 300px;
+            }
+            .message{
+                width: 300px;
+                height: 100px;
+                color: white;
+        }
+        .send-btn{
+                width: 180px;
+                font-size: 1.2rem;
+                padding: 20px 15px;
+        }
+        
+}
+@media (min-width: 900px) and (max-width: 1200px) {
+        #home{
+                flex-direction: column-reverse;
+        }
+        
+        .home-content{
+                width: 100%;
+                align-items: center;
+                height: 50vh;
+                gap: 20px;
+        }
+        .greetings{
+                font-size: 2rem;
+        }
+        .home-content .name{
+                font-size: 1.6rem;
+        }
+        .student{
+                font-size: 1.5rem;
+        }
+        .tag-line{
+                font-size: .5rem;
+                flex-wrap: wrap;
+                width: 50%;
+        }
+        .image-background{
+                margin-top: 120px;
+                padding-top: 100px;
+                width: 270px;
+                height: 240px;
+        }
+        .me{
+                width: 290px;
+                height: 320px;  
+        }
+        .socialmedia-icons{
+                width: 30%;
+                font-size: .7rem;
+                margin-top: 20px;
+        }
+        .socialmedia-icons .icons{
+                border: 1px solid aqua;
+                padding: 5px;
+        }
+        .download-btn{
+                width: 200px;
+                font-size: 1.3rem;
+                padding: 15px 8px;
+        }
+        .about-content{
+                width: 60%;
+                height: 700px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); 
+                grid-template-rows: repeat(3, auto);
+           
+        
+        }
+        .about-my-self{
+                width:90%; 
+                height:200px;
+                color: white;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+                transition: all .5s ease-in-out;
+        }
+        .about-my-self span{
+                padding: 15px;
+                display: flex;
+                gap: 30px;
+                width: auto;
+           
+        }
+        .about-my-self span i{
+                font-size: 40px;
+                
+        }
+        .about-my-self span h2{
+                font-size: 5px;
+                
+        }
+        .User-info {
+                position: relative;
+                width: 400px;
+            }
+            .message{
+                width: 400px;
+                height: 100px;
+        }
+        .send-btn{
+                width: 180px;
+                font-size: 1.2rem;
+                padding: 20px 15px;
+        }
+        .about-my-self{
+                width: 250px; 
+                height:200px;
+                color: white;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+                transition: all .5s ease-in-out;
+        }
+        .about-my-self span{
+                padding: 15px;
+                display: flex;
+                gap: 30px;
+                width: auto;
+           
+        }
+        .about-my-self span i{
+                font-size: 30px;
+                
+        }
+        .about-my-self span h2{
+                font-size: 20px;
+                
+        }
+        .User-info {
+                position: relative;
+                width: 400px;
+            }
+            .message{
+                width: 400px;
+                height: 100px;
+                color: white;
+        }
+        .send-btn{
+                width: 180px;
+                font-size: 1.2rem;
+                padding: 20px 15px;
+        } 
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+        .socialmedia-icons{
+                width: 40%;
+                font-size: 1rem;
+                margin-top: 20px;
+        }
+        .socialmedia-icons .icons{
+                border: 1px solid aqua;
+                padding: 5px;
+        }
+       
+        .about-content{
+                height: 500px;
+        }
+        .school{
+                font-size: 23px;
+        }
+        .about-my-self{
+                width:90%; 
+                height:200px;
+                color: white;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+                transition: all .5s ease-in-out;
+        }
+        .about-my-self span{
+                padding: 15px;
+                display: flex;
+                gap: 30px;
+                width: auto;
+           
+        }
+        .about-my-self span i{
+                font-size: 30px;
+                
+        }
+        .about-my-self span h2{
+                font-size: 25px;
+                
+        }
+      }
+      @media (min-width: 1500px) and (max-width: 2000px) {
+        .socialmedia-icons{
+                width: 40%;
+                font-size: 1rem;
+                margin-top: 20px;
+        }
+        .socialmedia-icons .icons{
+                border: 1px solid aqua;
+                padding: 5px;
+        }
+        .about-content{
+                width: 55%;
+        }
+        .about-my-self{
+                width:320px; 
+                height:250px;
+                color: white;
+                background: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+                transition: all .5s ease-in-out;
+        }
+        .about-my-self span{
+                padding: 15px;
+                display: flex;
+                gap: 30px;
+                width: auto;
+           
+        }
+        .about-my-self span i{
+                font-size: 30px;
+                
+        }
+        .about-my-self span h2{
+                font-size: 25px;
+                
+        }
+      }

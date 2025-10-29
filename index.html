@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+SC:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Resume</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo">Portfolio</h1>
+        <input type="checkbox" id="open">
+        <label for="open" class="open-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="navbar">
+            <nav class="navlinks">
+                <label for="open" class="close-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <a href="#home" class="links" id="home-nav">Home <span></span></a>
+                <a href="#about" class="links" id="about-nav">About <span></span></a>
+                <a href="#contact" class="links" id="contact-nav">Contact <span></span></a>
+            </nav>
+        </div>
+       
+    </header>
+
+    <div id="home">
+        <div class="home-content">
+            <h3 class="greetings">Hello, It's Me</h3>
+            <h1 class="name">Armando Granel Jr</h1>
+            <h2 class="student">Student at <span class="school">Phinma Araullo University</span></h2>
+            <span class="tag-line">
+                <p>Aspiring Full Stack Web Developer</p>
+                <p>Passionate about continuos learning and self improvement</p>
+                <p>Always pushing boundaries to achive more</p>
+            </span>
+
+            <div class="socialmedia-icons">
+                <i class="fa-brands fa-facebook icons facebook" ></i>
+                <i class="fa-brands fa-github icons github" ></i>
+                <i class="fa-brands fa-instagram icons instagram"></i>
+                <i class="fa-brands fa-linkedin-in icons linkedin"></i>
+            </div>
+
+            <button class="download-btn">Download CV</button>
+        </div>
+        <div class="image-background">
+            <img src="me.png" class="me" alt="">
+        </div>
+    </div>
+    <div  id="about">
+            <h1 class="about-header">About Me</h1>
+            <div class="about-content">
+                <div class="about-my-self">
+                    <span>
+                        <i class="fa-solid fa-house"></i> <h2>Address</h2>
+                    </span> 
+                    <span>I'm from Estrella Rizal Nueva Ecija</span>
+                   
+                </div>
+                <div class="about-my-self">
+                    <span>
+                        <i class="fa-solid fa-cake-candles"></i>
+                        <h2>Birthday</h2>
+                    </span>
+                    <span>June 14 2005</span>
+                </div>
+                <div class="about-my-self">
+                    <span>
+                        <i class="fa-solid fa-tv"></i>
+                        <h2>Anime</h2>
+                    </span>
+                    <span>
+                        I love watching Anime Specially Naruto, 7 deadly sins and demon slayer
+                    </span>
+                </div>
+                <div class="about-my-self">
+                    <span>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Coding</h2>
+                       
+                    </span>
+                    <span>
+                        I always study coding in my free time learning new things pushing boundaries to achive more
+                    </span>
+                </div>
+                <div class="about-my-self">
+                    <span>
+                        <i class="fa-solid fa-gamepad"></i>
+                        <h2>Games</h2>
+                    </span>
+                    <span>
+                        My favorite games right now is blox fruit in roblox
+                    </span>
+                </div>
+                <div class="about-my-self">
+                    <span>
+
+                        <i class="fa-brands fa-facebook"></i>
+                        <h2>Facebook</h2>
+                    </span>
+                    <span>
+                        watching meme give me happiness specially when I'm stress
+                    </span>
+                </div>
+            </div>
+    </div>
+    <div id="contact">
+        <h1>Get in Touch</h1>
+        
+        <form>
+            <div class="User-info">
+                <input type="text"required>
+                <label >Full Name</label>
+            </div>
+            <div class="User-info">
+                <input type="text"required>
+                <label>Phone Number</label>
+            </div>
+            <div class="User-info">
+                <input type="email"required>
+                <label>Email Account</label>
+            </div>
+            <textarea placeholder="Message" rows="10" cols="67" class="message"></textarea>
+            <button class="send-btn">Send Message</button>
+        </form>
+
+    
+    </div>
+</body>
+</html>
