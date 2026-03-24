@@ -157,7 +157,7 @@ const About = () => {
               </span>
             </span>
           </span>
-          <a href="Resume.pdf" download className="mt-auto flex self-end items-center gap-2 border border-slate-300 p-2 rounded-md transition-all duration-300 ease-in-out hover:text-[rgb(27,250,128)] hover:border-[rgb(27,250,128)] text-white">
+          <a href="../Resume.pdf" download className="mt-auto flex self-end items-center gap-2 border border-slate-300 p-2 rounded-md transition-all duration-300 ease-in-out hover:text-[rgb(27,250,128)] hover:border-[rgb(27,250,128)] text-white">
             Download CV
             <FontAwesomeIcon icon={faDownload}/>
           </a>
