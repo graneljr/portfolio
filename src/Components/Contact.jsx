@@ -73,8 +73,6 @@ const Contact = () => {
 
   return (
     <div className="w-full py-5 flex flex-col gap-5">
-
-      {/* Section Label */}
       <span className="w-full flex gap-5 items-center">
         <h1 className="text-slate-500 font-bold whitespace-nowrap tracking-widest text-xs">
           CONTACT ME
@@ -83,8 +81,6 @@ const Contact = () => {
       </span>
 
       <div className="flex w-full flex-col gap-6">
-
-        {/* Heading + availability */}
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
             <h1 className="text-white font-bold text-4xl leading-tight">
@@ -99,7 +95,7 @@ const Contact = () => {
             className="group flex items-center justify-between p-5 border-b border-slate-700/60 cursor-pointer transition-all duration-300 hover:bg-slate-50/5"
           >
             <div className="flex flex-col gap-1">
-              <span className="text-slate-500 text-[10px] font-mono tracking-widest uppercase">
+              <span className="text-slate-500 text-[12px]  tracking-widest uppercase">
                 Email me directly
               </span>
               <span className="text-white text-base sm:text-lg font-medium group-hover:text-[rgb(27,250,128)] transition-colors duration-300">
@@ -119,7 +115,7 @@ const Contact = () => {
             </button>
           </div>
 
-          {/* Socials grid */}
+        
           <div className="grid grid-cols-1 sm:grid-cols-2">
             {socials.map((s, i) => (
               <button
@@ -137,7 +133,7 @@ const Contact = () => {
                   borderBottom: i < 2 ? "1px solid rgba(100,116,139,0.4)" : "none",
                 }}
               >
-                {/* Icon box */}
+              
                 <div
                   className="h-14 w-14 flex-shrink-0 flex items-center justify-center rounded-xl border border-slate-700 transition-all duration-300 group-hover:border-opacity-60"
                   style={{
@@ -154,7 +150,6 @@ const Contact = () => {
                   />
                 </div>
 
-                {/* Text */}
                 <div className="flex flex-col flex-1 min-w-0">
                   <span
                     className="font-medium text-base transition-colors duration-300"
@@ -176,7 +171,7 @@ const Contact = () => {
                   </span>
                 </div>
 
-                {/* Arrow */}
+             
                 <FontAwesomeIcon
                   icon={faLocationArrow}
                   className="text-sm flex-shrink-0 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -187,13 +182,11 @@ const Contact = () => {
               </button>
             ))}
           </div>
-
-          {/* Bottom bar */}
           <div className="flex items-center justify-between px-5 py-3 border-t border-slate-700/60 bg-slate-900/30">
-            <span className="text-slate-600 text-xs font-mono">
+            <span className="text-slate-600 text-xs ">
               All messages are read personally
             </span>
-            <span className="text-slate-600 text-xs font-mono">
+            <span className="text-slate-600 text-xs ">
               © 2026 Armando Granel Jr.
             </span>
           </div>

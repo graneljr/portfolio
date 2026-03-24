@@ -24,7 +24,7 @@ const Projects = () => {
                 <h3 className="font-bold">Tech Stack used</h3>
                 <span className="flex flex-wrap gap-5">
                   {value.stack.map((stack, _) => (
-                    <span className="px-3 py-1 text-[11px] font-mono text-white cursor-pointer transition-all duration-300 ease-in-out hover:text-[rgb(27,250,128)] hover:border-[rgb(27,250,128)] border flex gap-2 items-center justify-center border-slate-500 rounded-md">
+                    <span key={stack.label} className="px-3 py-1 text-[11px] font-mono text-white cursor-pointer transition-all duration-300 ease-in-out hover:text-[rgb(27,250,128)] hover:border-[rgb(27,250,128)] border flex gap-2 items-center justify-center border-slate-500 rounded-md">
                       {stack.icons}
                       {stack.label}
                     </span>

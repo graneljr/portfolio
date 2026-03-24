@@ -78,11 +78,18 @@ const NavBar = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const scrollUp = ()=>{
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
   return (
     <nav className="w-full fixed top-0 left-0 z-50 flex items-center justify-center bg-black">
       <div className=" py-5 xsm:w-[80%] sm:w-[75%] md:w-[50%] lg:w-[40%] xl:w-[30%] 2xl:w-[20%] flex justify-between items-center">
-       <h1 className="text-xl text-[rgb(27,250,128)]">
-        GranelDev
+       <h1 onClick={()=>scrollUp()} className="text-xl cursor-pointer text-[rgb(27,250,128)]">
+        Granel
        </h1>
         <ul
           className="relative w-fit gap-10 flex items-center"
@@ -99,7 +106,9 @@ const NavBar = () => {
               }}
               className={`cursor-pointer pb-1 font-medium transition-colors duration-200 ${
                 active === i ? "text-[rgb(27,250,128)]" : "text-white"
-              }`}
+              }
+              `
+            }
             >
               {item}
             </li>

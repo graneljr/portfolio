@@ -7,7 +7,7 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faDownload, faPhone } from "@fortawesome/free-solid-svg-icons";
 const About = () => {
  
 
@@ -123,6 +123,16 @@ const About = () => {
       ),
       label: "Kotlin",
     },
+    {
+      icons: (
+        <StackIcon
+          className=" h-[30px] w-[30px]"
+          variant="dark"
+          name="android"
+        />
+      ),
+      label: "Android Studio",
+    },
   ];
 
   return (
@@ -134,12 +144,12 @@ const About = () => {
             alt="me"
           />
         <div className="flex-1 flex-col flex  gap-3">
-          <span>
+          <span className="flex flex-col">
             <h1 className="text-white text-2xl font-bold">
               Armando Granel Jr.
             </h1>
             <h3 className="text-[rgb(27,250,128)]">Web Developer</h3>
-            <span className="text-slate-300 font-mono">
+            <span className="text-slate-300 ">
               Hello I'm Armando Granel Jr. From Rizal Nueva Ecija Philippines a  BSIT
               Student at{" "}
               <span className="text-[rgb(27,250,128)]">
@@ -172,7 +182,7 @@ const About = () => {
           </span>
           <div className="flex flex-wrap p-5 gap-5 w-full">
             {techstack.map((stack, _) => (
-              <span className="px-3 py-1 text-[10px] font-mono text-white cursor-pointer transition-all duration-300 ease-in-out hover:text-[rgb(27,250,128)] hover:border-[rgb(27,250,128)] border flex gap-2 items-center justify-center border-slate-500 rounded-md">
+              <span key={stack.label} className="px-3 py-1 text-[10px] font-mono text-white cursor-pointer transition-all duration-300 ease-in-out hover:text-[rgb(27,250,128)] hover:border-[rgb(27,250,128)] border flex gap-2 items-center justify-center border-slate-500 rounded-md">
                 {stack.icons}
                 {stack.label}
               </span>
