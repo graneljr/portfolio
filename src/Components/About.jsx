@@ -134,7 +134,38 @@ const About = () => {
       ),
       label: "Android Studio",
     },
+     {
+      icons: (
+        <StackIcon
+          className=" h-[30px] w-[30px]"
+          variant="dark"
+          name="js"
+        />
+      ),
+      label: "JavaScript",
+    },
+     {
+      icons: (
+        <StackIcon
+          className=" h-[30px] w-[30px]"
+          variant="dark"
+          name="mysql"
+        />
+      ),
+      label: "MySQL",
+    },
+     {
+      icons: (
+        <StackIcon
+          className=" h-[30px] w-[30px]"
+          variant="light"
+          name="java"
+        />
+      ),
+      label: "Java",
+    },
   ];
+
 
   return (
     <div className="w-full h-auto mt-[100px] flex flex-col gap-10">
@@ -149,13 +180,14 @@ const About = () => {
             <h1 className="text-white text-2xl font-bold">
               Armando Granel Jr.
             </h1>
-            <h3 className="text-[rgb(27,250,128)]">Web Developer</h3>
+            <h3 className="text-[rgb(27,250,128)]">Full Stack Developer</h3>
             <span className="text-slate-300 ">
-              Hello I'm Armando Granel Jr. From Rizal Nueva Ecija Philippines a  BSIT
+            Hello, I’m Armando Granel Jr., a developer based in Rizal, Nueva Ecija, Philippines. I build software with a focus on reliability and straightforward design
+               {/* a  BSIT
               Student at{" "}
               <span className="text-[rgb(27,250,128)]">
                 PHINMA-ARAULLO UNIVERSITY
-              </span>
+              </span> */}
             </span>
           </span>
           <a href="/Resume.pdf" download className="mt-auto flex self-end items-center gap-2 border border-slate-300 p-2 rounded-md transition-all duration-300 ease-in-out hover:text-[rgb(27,250,128)] hover:border-[rgb(27,250,128)] text-white">
