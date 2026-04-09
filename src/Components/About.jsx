@@ -215,7 +215,7 @@ const About = () => {
           </span>
           <div className="flex flex-wrap p-5 gap-5 w-full">
             {techstack.map((stack, _) => (
-              <span key={stack.label} className="px-3 py-1 text-[10px] font-mono text-white cursor-pointer transition-all duration-300 ease-in-out hover:text-[rgb(27,250,128)] hover:border-[rgb(27,250,128)] border flex gap-2 items-center justify-center border-slate-500 rounded-md">
+              <span key={stack.label} className="px-3 py-1 text-[14px] font-mono text-white cursor-pointer transition-all duration-300 ease-in-out hover:text-[rgb(27,250,128)] hover:border-[rgb(27,250,128)] border flex gap-2 items-center justify-center border-slate-500 rounded-md">
                 {stack.icons}
                 {stack.label}
               </span>
