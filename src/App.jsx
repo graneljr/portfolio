@@ -3,6 +3,13 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import me from "./assets/image.png";
 import meNight from "./assets/night.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faFacebook,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 import {
   ArrowRight,
   Calendar,
@@ -12,12 +19,13 @@ import {
   Mail,
   Book,
 } from "lucide-react";
+import { motion } from "motion/react";
 function App() {
   const [count, setCount] = useState(0);
   const [dark, setDark] = useState(false);
 
   const frontend = ["JavaScript", "React", "Tailwind", "Shadcn ui"];
-  const backend = ["Node.js", "Express.js", "Mongodb", "REST"];
+  const backend = ["Node.js", "Express.js", "Mongodb", "REST", "MySQL"];
   const dev_tools = ["PostMan", "Git", "Github", "VS CODE"];
 
   const milestone = [
@@ -87,11 +95,38 @@ function App() {
       tools: ["PHP", "JavaScript", "MySQL", "CSS", "HTML", "PostMan"],
     },
   ];
+
+  const socials = [
+    {
+      name: "Facebook",
+      icon: faFacebook,
+      link: "",
+    },
+    {
+      name: "Github",
+      icon: faGithub,
+      link: "",
+    },
+    {
+      name: "Instagram",
+      icon: faInstagram,
+      link: "",
+    },
+    {
+      name: "LinkedIn",
+      icon: faLinkedin,
+      link: "",
+    },
+  ];
   return (
     <div
       className={`w-full flex items-center dark:bg-black dark:text-white pt-10 justify-center ${dark ? "dark" : ""} transition-all duration-300 ease-in-out`}
     >
-      <div className="w-[45%] flex flex-col gap-5">
+      <motion.div 
+      initial={{opacity:0, translateY: 20}}
+      animate={{opacity:1, translateY: 0}}
+      transition={{duration:1, ease: "linear"}}
+      className="w-[45%] flex flex-col gap-5">
         <div className="w-full flex gap-5 items-center">
           <div className="relative w-[20%] aspect-square">
             <img
@@ -101,7 +136,6 @@ function App() {
               }`}
             />
 
-           
             <img
               src={meNight}
               className={`absolute inset-0 w-full h-full object-cover  transition-opacity duration-700 ${
@@ -172,6 +206,13 @@ function App() {
             delivering exceptional user experiences. I'm constantly learning and
             staying up-to-date with the latest industry trends and best
             practices.
+          </p>
+          <p>
+            As an upcoming third-year BSIT student, I’m still growing in my
+            field while helping my classmates by sharing what I know and guiding
+            them through topics they find difficult. Teaching others also helps
+            me understand things better and supports a more collaborative
+            learning environment.
           </p>
         </div>
         <div className="w-full flex gap-4">
@@ -280,7 +321,20 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+        <div className="p-5 shadow dark:bg-gray-200/10 flex gap-3 ">
+          <div className="w-1/2 flex flex-col gap-2">
+            <h1 className="text-md font-bold">Social Links</h1>
+            {socials.map((social, _) => (
+              <a
+                href={social.link}
+                className="shadow py-2 px-3 flex items-center gap-2"
+              >
+                <FontAwesomeIcon icon={social.icon} /> {social.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
