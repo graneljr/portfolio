@@ -82,6 +82,7 @@ function App() {
         "REST",
         "MVC",
         "PostMan",
+        "Resend API"
       ],
     },
     {
