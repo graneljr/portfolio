@@ -38,6 +38,7 @@ body {
   --color-muted: #64748B;
   --color-muted-light: #eff1f5;
   --color-muted-foreground: #717182;
-
   --color-primary: hsl(220, 60%, 20%);
+
+  --breakpoint-xs: 300px;
 }
