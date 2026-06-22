@@ -18,6 +18,11 @@ import {
   SunMedium,
   Mail,
   Book,
+  Expand,
+  Code2,
+  Dot,
+  BookOpen,
+  Zap,
 } from "lucide-react";
 import { motion } from "motion/react";
 function App() {
@@ -82,7 +87,7 @@ function App() {
         "REST",
         "MVC",
         "PostMan",
-        "Resend API"
+        "Resend API",
       ],
     },
     {
@@ -123,12 +128,13 @@ function App() {
     <div
       className={`w-full flex items-center dark:bg-black dark:text-white pt-10 justify-center ${dark ? "dark" : ""} transition-all duration-300 ease-in-out`}
     >
-      <motion.div 
-      initial={{opacity:0, translateY: 20}}
-      animate={{opacity:1, translateY: 0}}
-      transition={{duration:1, ease: "linear"}}
-      className="w-[45%] flex flex-col gap-5">
-        <div className="w-full flex gap-5 items-center">
+      <motion.div
+        initial={{ opacity: 0, translateY: 20 }}
+        animate={{ opacity: 1, translateY: 0 }}
+        transition={{ duration: 1, ease: "linear" }}
+        className="w-[45%] flex flex-col gap-5"
+      >
+        <div className="w-full flex gap-5 items-center border border-gray-300 dark:border-white/20 rounded-xl shadow p-5">
           <div className="relative w-[20%] aspect-square">
             <img
               src={me}
@@ -168,11 +174,13 @@ function App() {
                   </div>
                 </button>
               </span>
-              <span className="flex items-center gap-1 font-semibold">
+              <span className="flex text-sm text-muted-foreground dark:text-gray-200 items-center gap-1 ">
                 <MapPin size={15} /> <h1>Rizal Nueva Ecija, Philippines</h1>
               </span>
             </div>
-            <h1 className="font-semibold text-lg">Full Stack Developer</h1>
+            <span className="px-3 rounded-full py-1 dark:bg-white/10 dark:border-transparent bg-gray-100 self-start border-gray-300 border items-center gap-1 text-xs font-semibold flex ">
+              <Zap size={15} className="text-yellow-500"/> FULL STACK DEVELOPER
+            </span>
             <div className="w-full flex items-center gap-3">
               <div className="flex items-center gap-2">
                 <span className="px-4 py-2 text-sm flex items-center gap-1 font-semibold bg-black text-white dark:bg-white dark:text-black ">
@@ -193,28 +201,81 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col px-5 py-6 shadow-sm gap-3  dark:bg-gray-200/10">
-          <h1 className="text-lg font-bold">About</h1>
-          <p>
-            I'm a passionate full-stack developer with expertise in building
-            modern web applications using the MERN stack. I specialize in
-            creating scalable, user-friendly solutions that solve real-world
-            problems.
-          </p>
-          <p>
-            With a strong foundation in both front-end and back-end
-            technologies, I focus on writing clean, maintainable code and
-            delivering exceptional user experiences. I'm constantly learning and
-            staying up-to-date with the latest industry trends and best
-            practices.
-          </p>
-          <p>
-            As an upcoming third-year BSIT student, I’m still growing in my
-            field while helping my classmates by sharing what I know and guiding
-            them through topics they find difficult. Teaching others also helps
-            me understand things better and supports a more collaborative
-            learning environment.
-          </p>
+        <div className="flex gap-7 w-full">
+          <div className="w-[60%] flex flex-col px-5 py-6 shadow-sm gap-3  dark:bg-gray-200/10">
+            <h1 className="text-lg font-bold">About</h1>
+            <p>
+              I'm a passionate full-stack developer with expertise in building
+              modern web applications using the MERN stack. I specialize in
+              creating scalable, user-friendly solutions that solve real-world
+              problems.
+            </p>
+            <p>
+              With a strong foundation in both front-end and back-end
+              technologies, I focus on writing clean, maintainable code and
+              delivering exceptional user experiences. I'm constantly learning
+              and staying up-to-date with the latest industry trends and best
+              practices.
+            </p>
+            <p>
+              As an upcoming third-year BSIT student, I’m still growing in my
+              field while helping my classmates by sharing what I know and
+              guiding them through topics they find difficult. Teaching others
+              also helps me understand things better and supports a more
+              collaborative learning environment.
+            </p>
+          </div>
+          <div className="px-5 py-6 shadow-sm gap-5 flex flex-col flex-1 dark:bg-gray-200/10">
+            <div className="flex justify-between items-center ">
+              <Expand />
+              <span className="px-3 flex py-2  rounded-xl items-center text-xs font-semibold gap-2">
+                <Code2 size={16} /> Since 2025
+              </span>
+            </div>
+            <div className="w-full flex flex-col gap-2 pb-2 border-b border-slate-300">
+              <h1 className="text-xs font-semibold text-muted dark:text-gray-200/60">
+                FULL STACK DEVELOPER
+              </h1>
+              <span>
+                <h1 className="text-4xl font-bold dark:text-white">Armando</h1>
+                <h1 className="text-4xl font-bold dark:text-white">
+                  Granel Jr
+                </h1>
+              </span>
+              <span className="flex items-center text-muted text-sm dark:dark:text-gray-200/60">
+                <Dot className="text-green-500" size={30} /> Open for
+                Opportunities
+              </span>
+            </div>
+            <div className="w-full flex flex-col gap-2 pb-2 border-b border-slate-300">
+              <span className="text-muted dark:text-gray-300 flex items-center gap-1 text-sm">
+                <MapPin size={17} />
+                Rizal, Nueva Ecija, Philippines
+              </span>
+              <span className="text-muted dark:text-gray-300 flex items-center gap-1 text-sm">
+                <BookOpen size={17} /> 3rd Year BSIT Student
+              </span>
+              <span className="text-muted dark:text-gray-300 flex items-center gap-1 text-sm">
+                <Zap className="text-yellow-500" size={17} /> MERN STACK
+                DEVELOPER
+              </span>
+            </div>
+            <div className="w-full flex flex-col gap-3">
+              <div className="flex flex-col gap-1">
+                <h1 className="text-xs font-semibold text-muted dark:text-gray-200/60">
+                  AVAILABILITY
+                </h1>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold dark:text-gray-200 py-0.5 px-2 rounded-full  bg-slate-100 border border-slate-300 dark:bg-gray-200/10 dark:border-transparent ">
+                    Freelance
+                  </span>
+                  <span className="text-xs font-semibold dark:text-gray-200 py-0.5 px-2 rounded-full  bg-slate-100 border border-slate-300 dark:bg-white/10 dark:border-transparent ">
+                    Part-time
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="w-full flex gap-4">
           <div className="flex  flex-col gap-2 w-[60%]">
