@@ -8,6 +8,17 @@
   
 }
 
+@layer utilities {
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+ 
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text: #9ca3af;

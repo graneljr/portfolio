@@ -23,12 +23,14 @@ import {
   Users,
   Coffee,
   Infinity,
+  Quote,
 } from "lucide-react";
 import { recent_projects } from "../utils/recentProjects";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { globalThemeStore } from "../zustand/globalThemeStore";
 import { techstack } from "../utils/techStack";
+import { useState } from "react";
 function Home() {
   const dark = globalThemeStore((state) => state.isDarkMode);
   const toggleDarkMode = globalThemeStore((state) => state.toggleDarkMode);
@@ -108,6 +110,48 @@ function Home() {
       link: "",
     },
   ];
+  const makeSchedule = () => {
+    window.open(
+      "https://calendar.app.google/UE8SzGFFWpfAemMJ7",
+      "popupWindow",
+      "width=600,height=400,left=200,top=200,popup=yes",
+    );
+  };
+
+  const recomedations = [
+    {
+      name: "Jhon Patrick Zapanta",
+      logo: "JZ",
+       bg:"bg-blue-500",
+      message:
+        "Armando consistently goes beyond what is required. His ability to grasp new concepts quickly and apply them in real projects is impressive for a third-year student.",
+      role: "Professor · BSIT Department",
+    },
+    {
+      name: "Juan dela Cruz",
+      logo: "JD",
+       bg:"bg-purple-500",
+      message:
+        "I had the pleasure of collaborating with Armando on a freelance project. He wrote clean, well-structured code and communicated clearly throughout the engagement.",
+      role: "Senior Developer · Freelance",
+    },
+    {
+      name: "Lea Reyes",
+      logo: "LR",
+       bg:"bg-emerald-500",
+      message:
+        "Whenever our group got stuck, Armando was the first to help. He explains things patiently and makes sure everyone understands before moving on.",
+      role: "Classmate",
+    },
+  ];
+  const [selectedRecomendation, setSelectedRecomendation] = useState({
+    name: "Jhon Patrick Zapanta",
+    bg:"bg-blue-500",
+    logo: "JZ",
+    message:
+      "Armando consistently goes beyond what is required. His ability to grasp new concepts quickly and apply them in real projects is impressive for a third-year student.",
+    role: "Professor · BSIT Department",
+  });
   return (
     <motion.div
       initial={{ opacity: 0, translateY: 20 }}
@@ -153,12 +197,23 @@ function Home() {
           </span>
           <div className="w-full mt-auto flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <span className="px-4 rounded-lg py-2 text-sm flex items-center gap-1 font-semibold bg-black text-white dark:bg-white dark:text-black ">
+              <span
+                onClick={() => makeSchedule()}
+                className="px-4 rounded-lg py-2 text-sm flex items-center gap-1 font-semibold bg-black text-white dark:bg-white dark:text-black "
+              >
                 <Calendar size={15} /> Schedule a Call{" "}
                 <ArrowRight className="ml-2" size={15} />
               </span>
 
-              <span className="px-5 border border-slate-100 transition-all duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-white/20 dark:border-white/20 rounded-lg py-2 text-sm flex items-center shadow gap-1 font-semibold  ">
+              <span
+                onClick={() =>
+                  window.open(
+                    "https://mail.google.com/mail/?view=cm&fs=1&to=armandogranel2@gmail.com",
+                    "_blank",
+                  )
+                }
+                className="px-5 border border-slate-100 transition-all duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-white/20 dark:border-white/20 rounded-lg py-2 text-sm flex items-center shadow gap-1 font-semibold  "
+              >
                 <Mail size={15} /> Send Email
               </span>
             </div>
@@ -356,7 +411,10 @@ function Home() {
           <div className=" w-full flex flex-col px-5 py-6 shadow-sm gap-5 border border-gray-200 dark:border-white/20  rounded-xl">
             <span className="w-full flex items-center justify-between">
               <h1 className="text-md font-bold">Recent Project</h1>
-              <span onClick={()=> navigate("/projects")} className="flex items-center gap-2 text-xs font-semibold">
+              <span
+                onClick={() => navigate("/projects")}
+                className="flex items-center gap-2 text-xs font-semibold"
+              >
                 View All <ArrowRight size={15} />
               </span>
             </span>
@@ -419,6 +477,52 @@ function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="w-full p-7 shadow rounded-xl border border-gray-200 dark:border-white/20 flex flex-col gap-6">
+        <span className="flex items-center justify-between">
+          <h1 className="font-semibold text-md">Recomendations</h1>
+          <p className="text-muted dark:text-white/45">3 reviews</p>
+        </span>
+        <div className="p-4 bg-gray-200/70 dark:bg-white/5  border border-gray-300 rounded-xl flex gap-4 flex-col dark:border-white/20 ">
+          <Quote className="text-muted dark:text-white" size={20} />
+          <span className="w-full dark:text-white">
+            {selectedRecomendation.message}
+          </span>
+          <div className="flex items-center gap-3">
+            <span className={`h-10 w-10 ${selectedRecomendation.bg} text-white font-semibold flex items-center justify-center text-md rounded-full`}>
+              {selectedRecomendation.logo}
+            </span>
+            <span>
+              <h3 className="text-sm font-semibold dark:text-white">
+                {selectedRecomendation.name}
+              </h3>
+              <p className="text-xs text-muted dark:text-white/45">
+                {selectedRecomendation.role}
+              </p>
+            </span>
+          </div>
+        </div>
+        <div className=" items-center grid grid-cols-3 gap-5">
+          {recomedations.map((recomedation, index) => (
+            <div
+              onClick={() => setSelectedRecomendation(recomedation)}
+              key={index}
+              className={`flex px-4 py-2  items-center dark:border-white/20  gap-3 bg-gray-200/70 ${recomedation.name === selectedRecomendation.name ? "dark:bg-white/10" : "dark:bg-transparent"} border border-gray-300 rounded-xl`}
+            >
+              <span className={`h-10 w-10  ${recomedation.bg} text-white font-semibold flex items-center justify-center text-md rounded-full`}>
+                {recomedation.logo}
+              </span>
+              <span>
+                <h3 className="text-sm font-semibold dark:text-white">
+                  {recomedation.name}
+                </h3>
+                <p className="text-xs text-muted dark:text-white/45">
+                  {recomedation.role}
+                </p>
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </motion.div>
