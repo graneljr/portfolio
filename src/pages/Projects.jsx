@@ -8,7 +8,7 @@ const Projects = () => {
       <div className="w-full flex items-center gap-3">
         <button
           onClick={() => navigate("/")}
-          className="flex items-center dark:text-white/45 gap-1 text-muted"
+          className="flex items-center dark:text-white/45 gap-1 text-gray-500"
         >
           <ArrowLeft size={17} /> Back to Home
         </button>
@@ -21,7 +21,7 @@ const Projects = () => {
             className="border border-gray-200 dark:border-white/20 self-start rounded-lg shadow p-3 flex flex-col gap-2"
           >
             <h1 className="font-semibold text-sm">{item.title}</h1>
-            <p className="text-sm text-muted dark:text-white/45">{item.desc}</p>
+            <p className="text-sm text-gray-500 dark:text-white/45">{item.desc}</p>
             <div className="flex flex-wrap gap-2">
               {item.tools.map((tool, index) => (
                 <span

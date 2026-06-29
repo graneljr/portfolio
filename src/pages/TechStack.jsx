@@ -8,7 +8,7 @@ const TechStack = () => {
       <div className="w-full flex items-center gap-3">
         <button
           onClick={() => navigate("/")}
-          className="flex items-center dark:text-white/45 gap-1 text-muted"
+          className="flex items-center dark:text-white/45 gap-1 text-gray-500"
         >
           <ArrowLeft size={17} /> Back to Home
         </button>
@@ -20,7 +20,7 @@ const TechStack = () => {
           key={stack.label}
           className=" w-full flex flex-col gap-2 px-5 py-6 shadow-sm border border-gray-200 dark:border-white/20  rounded-xl"
         >
-          <h1 className="text-sm font-semibold text-muted dark:text-white/45">
+          <h1 className="text-sm font-semibold text-gray-500 dark:text-white/45">
             {stack.label}
           </h1>
           <div className="flex gap-3">

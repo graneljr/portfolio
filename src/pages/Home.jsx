@@ -25,16 +25,34 @@ import {
   Infinity,
   Quote,
 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { recent_projects } from "../utils/recentProjects";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
 import { globalThemeStore } from "../zustand/globalThemeStore";
 import { techstack } from "../utils/techStack";
 import { useState } from "react";
+import event from "../assets/event.jpeg"
+import groupfie from "../assets/groupfie.jpeg"
+import heart from "../assets/heart.jpeg"
+import networking_project from "../assets/networking_project.jpg"
+import presentation from "../assets/presentation.jpeg"
+import presentation1 from "../assets/presentation1.jpeg"
+import presentation2 from "../assets/presentation2.jpg"
+import presentation3 from "../assets/presentation3.jpeg"
+import tambay from "../assets/tambay.jpeg"
 function Home() {
   const dark = globalThemeStore((state) => state.isDarkMode);
   const toggleDarkMode = globalThemeStore((state) => state.toggleDarkMode);
   const navigate = useNavigate();
+  const myImages = [event, groupfie, heart, networking_project, presentation, presentation1, presentation2, presentation3, tambay]
   const milestone = [
     {
       title: "Upcoming 3rd year",
@@ -122,7 +140,7 @@ function Home() {
     {
       name: "Jhon Patrick Zapanta",
       logo: "JZ",
-       bg:"bg-blue-500",
+      bg: "bg-blue-500",
       message:
         "Armando consistently goes beyond what is required. His ability to grasp new concepts quickly and apply them in real projects is impressive for a third-year student.",
       role: "Professor · BSIT Department",
@@ -130,7 +148,7 @@ function Home() {
     {
       name: "Juan dela Cruz",
       logo: "JD",
-       bg:"bg-purple-500",
+      bg: "bg-purple-500",
       message:
         "I had the pleasure of collaborating with Armando on a freelance project. He wrote clean, well-structured code and communicated clearly throughout the engagement.",
       role: "Senior Developer · Freelance",
@@ -138,7 +156,7 @@ function Home() {
     {
       name: "Lea Reyes",
       logo: "LR",
-       bg:"bg-emerald-500",
+      bg: "bg-emerald-500",
       message:
         "Whenever our group got stuck, Armando was the first to help. He explains things patiently and makes sure everyone understands before moving on.",
       role: "Classmate",
@@ -146,7 +164,7 @@ function Home() {
   ];
   const [selectedRecomendation, setSelectedRecomendation] = useState({
     name: "Jhon Patrick Zapanta",
-    bg:"bg-blue-500",
+    bg: "bg-blue-500",
     logo: "JZ",
     message:
       "Armando consistently goes beyond what is required. His ability to grasp new concepts quickly and apply them in real projects is impressive for a third-year student.",
@@ -188,7 +206,7 @@ function Home() {
                 {dark ? <SunMedium /> : <Moon />}
               </button>
             </span>
-            <span className="flex text-sm text-muted-foreground dark:text-gray-200 items-center gap-1 ">
+            <span className="flex text-sm text-gray-500-foreground dark:text-gray-200 items-center gap-1 ">
               <MapPin size={15} /> <h1>Rizal Nueva Ecija, Philippines</h1>
             </span>
           </div>
@@ -251,30 +269,30 @@ function Home() {
           </p>
           <div className="w-full grid grid-cols-4 gap-4">
             <div className="flex items-center flex-col gap-1 py-3 bg-gray-200/70 dark:bg-white/15 dark:text- dark:border-white/30 border border-gray-300 rounded-xl">
-              <Code2 size={15} className="text-muted dark:text-white/45 " />
+              <Code2 size={15} className="text-gray-500 dark:text-white/45 " />
               <h1 className="font-bold text-xl">7+</h1>
-              <p className="text-xs w-[70%] text-center text-muted dark:text-white/45 ">
+              <p className="text-xs w-[70%] text-center text-gray-500 dark:text-white/45 ">
                 Projects Built
               </p>
             </div>
             <div className="flex items-center flex-col gap-1 py-3 bg-gray-200/70 dark:bg-white/15 dark:text- dark:border-white/30 border border-gray-300 rounded-xl">
-              <Users size={15} className="text-muted dark:text-white/45 " />
+              <Users size={15} className="text-gray-500 dark:text-white/45 " />
               <h1 className="font-bold text-xl">10+</h1>
-              <p className="text-xs  w-[70%] text-center text-muted dark:text-white/45 ">
+              <p className="text-xs  w-[70%] text-center text-gray-500 dark:text-white/45 ">
                 Classmates Mentored
               </p>
             </div>
             <div className="flex items-center flex-col gap-1 py-3 bg-gray-200/70 dark:bg-white/15 dark:text- dark:border-white/30 border border-gray-300 rounded-xl">
-              <Coffee size={15} className="text-muted dark:text-white/45 " />
+              <Coffee size={15} className="text-gray-500 dark:text-white/45 " />
               <Infinity />
-              <p className="text-xs  w-[70%] text-center text-muted dark:text-white/45 ">
+              <p className="text-xs  w-[70%] text-center text-gray-500 dark:text-white/45 ">
                 Cups of Coffee
               </p>
             </div>
             <div className="flex items-center flex-col gap-1 py-3 bg-gray-200/70 dark:bg-white/15 dark:text- dark:border-white/30 border border-gray-300 rounded-xl">
-              <Code2 size={15} className="text-muted dark:text-white/45 " />
+              <Code2 size={15} className="text-gray-500 dark:text-white/45 " />
               <h1 className="font-bold text-xl">7+</h1>
-              <p className="text-xs w-[70%] text-center text-muted dark:text-white/45 ">
+              <p className="text-xs w-[70%] text-center text-gray-500 dark:text-white/45 ">
                 Projects Built
               </p>
             </div>
@@ -288,33 +306,33 @@ function Home() {
             </span>
           </div>
           <div className="w-full flex flex-col gap-2 pb-2 border-b border-slate-300 dark:border-gray-300">
-            <h1 className="text-xs font-semibold text-muted dark:text-white/45">
+            <h1 className="text-xs font-semibold text-gray-500 dark:text-white/45">
               FULL STACK DEVELOPER
             </h1>
             <span>
               <h1 className="text-4xl font-bold dark:text-white">Armando</h1>
               <h1 className="text-4xl font-bold dark:text-white">Granel Jr</h1>
             </span>
-            <span className="flex items-center text-muted text-sm gap-3 dark:text-white/45">
+            <span className="flex items-center text-gray-500 text-sm gap-3 dark:text-white/45">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               <p> Open for Opportunities</p>
             </span>
           </div>
           <div className="w-full flex flex-col gap-2 pb-2 border-b border-slate-300 dark:border-gray-300">
-            <span className="text-muted dark:text-white/45 flex items-center gap-1 text-sm">
+            <span className="text-gray-500 dark:text-white/45 flex items-center gap-1 text-sm">
               <MapPin size={17} />
               Rizal, Nueva Ecija, Philippines
             </span>
-            <span className="text-muted dark:text-white/45 flex items-center gap-1 text-sm">
+            <span className="text-gray-500 dark:text-white/45 flex items-center gap-1 text-sm">
               <BookOpen size={17} /> 3rd Year BSIT Student
             </span>
-            <span className="text-muted dark:text-white/45 flex items-center gap-1 text-sm">
+            <span className="text-gray-500 dark:text-white/45 flex items-center gap-1 text-sm">
               <Zap className="text-yellow-500" size={17} /> MERN STACK DEVELOPER
             </span>
           </div>
           <div className="w-full flex flex-col gap-3">
             <div className="flex flex-col gap-1">
-              <h1 className="text-xs font-semibold text-muted dark:text-white/45">
+              <h1 className="text-xs font-semibold text-gray-500 dark:text-white/45">
                 AVAILABILITY
               </h1>
               <div className="flex items-center gap-2">
@@ -328,24 +346,24 @@ function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-1">
-            <h2 className="text-xs dark:text-white/45 font-semibold  text-muted ">
+            <h2 className="text-xs dark:text-white/45 font-semibold  text-gray-500 ">
               Langauges
             </h2>
             <div className="flex flex-col">
               <span className="flex items-center justify-between">
-                <p className="text-sm dark:text-white/45 text-muted ">
+                <p className="text-sm dark:text-white/45 text-gray-500 ">
                   Filipino
                 </p>
-                <p className="text-sm dark:text-white/45 text-muted ">100%</p>
+                <p className="text-sm dark:text-white/45 text-gray-500 ">100%</p>
               </span>
               <span className="w-full h-1 rounded-full dark:bg-gray-300 bg-muted-foreground"></span>
             </div>
             <div className="flex flex-col">
               <span className="flex items-center justify-between">
-                <p className="text-sm  text-muted dark:text-white/45">
+                <p className="text-sm  text-gray-500 dark:text-white/45">
                   English
                 </p>
-                <p className="text-sm  text-muted dark:text-white/45">50%</p>
+                <p className="text-sm  text-gray-500 dark:text-white/45">50%</p>
               </span>
               <div className="w-full flex">
                 <span className="w-1/2 h-1 rounded-l dark:bg-gray-300 bg-muted-foreground"></span>
@@ -354,14 +372,14 @@ function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-1">
-            <h2 className="text-xs dark:text-white/45 font-semibold  text-muted ">
+            <h2 className="text-xs dark:text-white/45 font-semibold  text-gray-500 ">
               SOCIAL LINKS
             </h2>
             <div className="w-full grid grid-cols-2 gap-3">
               {socials.map((social) => (
                 <a
                   href={social.link}
-                  className="shadow rounded-lg border border-gray-200 text-muted dark:text-white/45 dark:border-white/20 py-1 text-sm px-3 flex items-center gap-2"
+                  className="shadow rounded-lg border border-gray-200 text-gray-500 dark:text-white/45 dark:border-white/20 py-1 text-sm px-3 flex items-center gap-2"
                 >
                   <FontAwesomeIcon icon={social.icon} /> {social.name}
                 </a>
@@ -387,7 +405,7 @@ function Home() {
                 if (index <= 2)
                   return (
                     <div key={stack.label} className="flex flex-col gap-2">
-                      <h1 className="text-sm font-semibold text-muted dark:text-white/45">
+                      <h1 className="text-sm font-semibold text-gray-500 dark:text-white/45">
                         {stack.label}
                       </h1>
                       <div className="flex gap-3 pl-2">
@@ -427,7 +445,7 @@ function Home() {
                       className="border border-gray-200 dark:border-white/20 rounded-lg shadow p-3 flex flex-col gap-2"
                     >
                       <h1 className="font-semibold text-sm">{item.title}</h1>
-                      <p className="text-sm text-muted dark:text-white/45">
+                      <p className="text-sm text-gray-500 dark:text-white/45">
                         {item.desc}
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -470,7 +488,7 @@ function Home() {
                     <h1 className="text-xs font-bold w-[80%]">{item.title}</h1>
                     <p className="text-sm">{item.year}</p>
                   </span>
-                  <p className="text-sm text-muted dark:text-white/45">
+                  <p className="text-sm text-gray-500 dark:text-white/45">
                     {item.desc}
                   </p>
                 </div>
@@ -482,22 +500,24 @@ function Home() {
       <div className="w-full p-7 shadow rounded-xl border border-gray-200 dark:border-white/20 flex flex-col gap-6">
         <span className="flex items-center justify-between">
           <h1 className="font-semibold text-md">Recomendations</h1>
-          <p className="text-muted dark:text-white/45">3 reviews</p>
+          <p className="text-gray-500 dark:text-white/45">{recomedations.length} reviews</p>
         </span>
         <div className="p-4 bg-gray-200/70 dark:bg-white/5  border border-gray-300 rounded-xl flex gap-4 flex-col dark:border-white/20 ">
-          <Quote className="text-muted dark:text-white" size={20} />
+          <Quote className="text-gray-500 dark:text-white" size={20} />
           <span className="w-full dark:text-white">
             {selectedRecomendation.message}
           </span>
           <div className="flex items-center gap-3">
-            <span className={`h-10 w-10 ${selectedRecomendation.bg} text-white font-semibold flex items-center justify-center text-md rounded-full`}>
+            <span
+              className={`h-10 w-10 ${selectedRecomendation.bg} text-white font-semibold flex items-center justify-center text-md rounded-full`}
+            >
               {selectedRecomendation.logo}
             </span>
             <span>
               <h3 className="text-sm font-semibold dark:text-white">
                 {selectedRecomendation.name}
               </h3>
-              <p className="text-xs text-muted dark:text-white/45">
+              <p className="text-xs text-gray-500 dark:text-white/45">
                 {selectedRecomendation.role}
               </p>
             </span>
@@ -510,14 +530,16 @@ function Home() {
               key={index}
               className={`flex px-4 py-2  items-center dark:border-white/20  gap-3 bg-gray-200/70 ${recomedation.name === selectedRecomendation.name ? "dark:bg-white/10" : "dark:bg-transparent"} border border-gray-300 rounded-xl`}
             >
-              <span className={`h-10 w-10  ${recomedation.bg} text-white font-semibold flex items-center justify-center text-md rounded-full`}>
+              <span
+                className={`h-10 w-10  ${recomedation.bg} text-white font-semibold flex items-center justify-center text-md rounded-full`}
+              >
                 {recomedation.logo}
               </span>
               <span>
                 <h3 className="text-sm font-semibold dark:text-white">
                   {recomedation.name}
                 </h3>
-                <p className="text-xs text-muted dark:text-white/45">
+                <p className="text-xs text-gray-500 dark:text-white/45">
                   {recomedation.role}
                 </p>
               </span>
@@ -525,6 +547,35 @@ function Home() {
           ))}
         </div>
       </div>
+        <div className=" shadow rounded-xl border border-gray-200 dark:border-white/20 flex flex-col gap-5 p-6 items-center ">
+        <span className="flex  w-full items-center justify-between">
+          <h1 className="font-semibold text-md">Photos</h1>
+          <p className="text-gray-500 dark:text-white/45">{myImages.length} Photos</p>
+        </span>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-[90%]"
+          >
+            <CarouselContent>
+              {myImages.map((image, index) => (
+                <CarouselItem key={index} className="basis-1/2 lg:basis-1/5">
+                  <div>
+                    <Card className="bg-transparent! p-0">
+                      <CardContent className="p-0">
+                       <img src={image} className="w-full h-full" alt={image}/>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
     </motion.div>
   );
 }
