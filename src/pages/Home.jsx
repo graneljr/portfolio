@@ -25,14 +25,14 @@ import {
   Infinity,
   Quote,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/Components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@/Components/ui/carousel";
 import { recent_projects } from "../utils/recentProjects";
 import { motion } from "motion/react";
 import { useNavigate } from "react-router-dom";
